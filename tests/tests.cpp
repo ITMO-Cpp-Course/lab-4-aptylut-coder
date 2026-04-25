@@ -1,6 +1,6 @@
 #include <catch2/catch_all.hpp>
-#include <resource_core.hpp>
 #include <memory>
+#include <resource_core.hpp>
 
 using namespace lab4::resource;
 
@@ -24,8 +24,8 @@ TEST_CASE("Тестирование управления ресурсами File
 
         FileHandle handle2 = std::move(handle1);
 
-        REQUIRE(handle1.isOpen() == false);
-        REQUIRE(handle2.isOpen() == true);
+        REQUIRE_FALSE(handle1.isOpen());
+        REQUIRE(handle2.isOpen());
     }
 
     SECTION("Обработка ошибок при открытии")
@@ -34,7 +34,7 @@ TEST_CASE("Тестирование управления ресурсами File
     }
 }
 
-TEST_CASE("Тестирование менеджера ресурсов ResourceManager", "[manager]")
+TEST_CASE("Тестирование менеджера ресурсов ResourceManager")
 {
     ResourceManager manager;
     std::string filename = "shared_resource.txt";
