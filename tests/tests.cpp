@@ -1,6 +1,8 @@
+#include <FileHandle.hpp>
+#include <ResourceError.hpp>
+#include <ResourceManager.hpp>
 #include <catch2/catch_all.hpp>
 #include <memory>
-#include <resource_core.hpp>
 
 using namespace lab4::resource;
 
